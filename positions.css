@@ -1,0 +1,280 @@
+/* POSITIONS IN CSS */
+@import url("https://fonts.googleapis.com/css?family=consolas&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: grid;
+  /* grid-template-columns: 1fr 9fr; */
+  place-content: end;
+  color: white;
+}
+
+aside {
+  background-color: #1e1f26;
+  /* padding: 30px 20px; */
+  display: flex;
+  flex-direction: column;
+
+  color: white;
+  position: fixed;
+  min-height: 100vh;
+  min-width: 15vw;
+}
+
+a {
+  padding: 20px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+aside > a:hover {
+  background-color: #131417;
+}
+
+.logo_container {
+  padding: 20px;
+}
+small {
+  font-size: 8px;
+}
+
+#border_gradient {
+  background: #131417;
+  border: 4px solid yellow;
+  width: fit-content;
+  margin: 0 0 0 20px;
+  border-radius: 10px;
+}
+
+main {
+  background-color: #131417;
+  width: 85vw;
+  height: 100%;
+}
+
+a > span {
+  background-color: yellow;
+  padding: 5px 8px;
+  font-size: 10px;
+  color: black;
+  font-weight: bolder;
+}
+
+header {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 8fr 1fr 1fr;
+  gap: 15px;
+}
+
+input {
+  border-radius: 5px;
+  padding-left: 20px;
+  background-color: #252830;
+  color: white;
+  border: 0;
+  outline: 0;
+}
+
+input:focus {
+  background-color: #343843;
+}
+
+#sign,
+#log {
+  border-radius: 8px;
+  text-align: center;
+}
+
+#sign {
+  background-color: #47cf73;
+}
+
+#sign:hover {
+  background-color: #248248;
+}
+
+#log {
+  background-color: #252830;
+}
+
+#log:hover {
+  background-color: #343843;
+}
+
+.header_section {
+  background: hsl(0deg 0% 0%)
+    url("https://cpwebassets.codepen.io/assets/global/texture-codepen-2-d817063398aa9a2b534f3834f8533e2bae759c25933b86cdd149d9f0cc38563d.png");
+  min-height: 15rem;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: white;
+}
+
+.header_section h1 {
+  font-size: 3rem;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  gap: 20px;
+  width: 90%;
+  margin: 0px auto;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid_container div:first-child {
+  min-height: 13rem;
+  background-color: #343843;
+  margin-bottom: 10px;
+}
+
+.grid_container div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  gap: 10px;
+}
+
+.grid_container > section > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 40px;
+}
+
+.grid_container section {
+  background-color: #252830;
+  padding: 20px;
+}
+
+/* MEDIA QUERIES */
+/* 4-types of media in media query */
+/* screen - desktop, mobile, tablets */
+/* print - printable devices */
+/* speech - for screen readers or narrators */
+/* all - all of the above */
+
+/* @media screen and (min-width: 500px) {
+    various selectors and styling properties 
+} */
+
+/* desktop screen */
+@media screen and (min-width: 760px) {
+  .svg-mobile {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* mobile screen ranges from width of 320-425px*/
+/* @media screen and (min-width: 320px) and (max-width: 426px) { */
+/* @media screen and (max-width: 426px) { */
+@media screen and (max-width: 440px) {
+ 
+  body {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    background-color: #131417;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .header_section p {
+    font-size: 14px;
+  }
+  .header_section h1 {
+    font-size: 2rem;
+  }
+
+  .header_section {
+    min-height: 10rem;
+  }
+
+  .svg-mobile {
+    display: block;
+  }
+
+  .svg-mobile svg {
+    fill: white;
+    width: 20px;
+  }
+
+  header {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0px;
+    align-items: center;
+  }
+
+  input {
+    border-radius: 5px;
+    background-color: #252830;
+    color: white;
+    border: 0;
+    outline: 0;
+    width: 45vw;
+    padding: 10px;
+  }
+
+  a#sign,
+  a#log {
+    
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px 4px;
+    font-size: 0.7rem;
+
+  }
+  aside {
+    display: none;
+  }
+
+  /* Mobile Toggle Styles */
+.mobile-toggle {
+    display: block;
+    list-style: none;
+  }
+  
+  .mobile-toggle summary {
+    cursor: pointer;
+    list-style-type: none;
+  }
+  
+  .mobile-toggle aside {
+    display: none;
+    transition: all 0.5ms ease-in-out;
+
+  }
+  
+  .mobile-toggle[open] aside {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    min-height: auto;
+    transition: all 0.4ms ease-in;
+  }
+
+}
+
